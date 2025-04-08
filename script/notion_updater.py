@@ -53,6 +53,9 @@ def create_notion_page(database_id, properties, genre_database_id):
         genre_names = properties.get("Genres", "").split(", ")
         genre_ids = get_genre_ids(genre_names, genre_database_id)
 
+        # Determine if "Watched Seasons" and "Watched Episodes" should be included
+        format_excluded = ["Movie", "Special"]
+
         # Prepare properties for the new page
         notion_properties = {
             "Title": {"title": [{"text": {"content": properties.get("Title", "Unknown")}}]},
@@ -64,18 +67,16 @@ def create_notion_page(database_id, properties, genre_database_id):
                 }]
             },
             "Format": {"select": {"name": properties.get("Format", "N/A")}},
-            "Debut": {"rich_text": [{"text": {"content": properties.get("Debut", "")}}]},
+            "Debut Year": {"rich_text": [{"text": {"content": properties.get("Debut Year", "")}}]},
             "Studios": {"rich_text": [{"text": {"content": properties.get("Studios", "")}}]},
-            # "Next episode": {"number": properties.get("Next episode", None)},
-            "Watched seasons": {"number": properties.get("Watched seasons", None)},
             "Genres": {"relation": [{"id": genre_id} for genre_id in genre_ids]}
         }
 
-        # Add "Airing at" date property if available
-        """
-        if properties.get("Airing at"):
-            notion_properties["Airing at"] = {"date": {"start": properties.get("Airing at")}}
-        """
+        # Include "Watched Seasons" and "Watched Episodes" only when "Format" is neither "Movie" nor "Special"
+        if properties.get("Format") not in format_excluded:
+            notion_properties["Watched Seasons"] = {"number": properties.get("Watched Seasons", 0)}
+            notion_properties["Watched Episodes"] = {"number": properties.get("Watched Episodes", 0)}
+        
         # Set the page cover if a banner is provided
         banner_url = properties.get("Banner", None)
 
