@@ -51,8 +51,8 @@ def format_data_for_notion(anime_info: dict, searched_title: str) -> dict:
 
     # Extract other fields
     start_date = anime_info.get('startDate', {})
-    year = start_date.get('year', '')
-    formatted_year = str(year) if year else ""
+    year = start_date.get('year', None)
+    formatted_year = year if isinstance(year, int) else None
 
     studio_edges = anime_info.get('studios', {}).get('edges', [])
     studios_filtered = {

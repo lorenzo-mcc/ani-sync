@@ -67,7 +67,7 @@ def create_notion_page(database_id, properties, genre_database_id):
                 }]
             },
             "Format": {"select": {"name": properties.get("Format", "N/A")}},
-            "Debut Year": {"rich_text": [{"text": {"content": properties.get("Debut Year", "")}}]},
+            "Debut Year": {"number": properties.get("Debut Year", None)},
             "Studios": {"rich_text": [{"text": {"content": properties.get("Studios", "")}}]},
             "Genres": {"relation": [{"id": genre_id} for genre_id in genre_ids]}
         }
