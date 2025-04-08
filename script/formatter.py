@@ -42,6 +42,7 @@ def format_data_for_notion(anime_info: dict, searched_title: str) -> dict:
     format_map = {
         "TV": "TV",
         "MOVIE": "Movie",
+        "TV_SHORT": "TV Short",
         "OVA": "OVA",
         "ONA": "ONA",
         "SPECIAL": "Special"
@@ -54,11 +55,11 @@ def format_data_for_notion(anime_info: dict, searched_title: str) -> dict:
     formatted_year = str(year) if year else ""
 
     studio_edges = anime_info.get('studios', {}).get('edges', [])
-    studios_filtered = [
+    studios_filtered = {
         edge.get('node', {}).get('name', 'N/A')
         for edge in studio_edges
         if edge.get('node', {}).get('isAnimationStudio', False)
-    ]
+    }
     formatted_studios = ", ".join(studios_filtered) if studios_filtered else ""
 
     # Handle airing schedule
@@ -99,12 +100,9 @@ def format_data_for_notion(anime_info: dict, searched_title: str) -> dict:
         "Cover": cover,
         "Banner": banner,
         "Format": formatted_format,
-        "Debut": formatted_year,
+        "Debut Year": formatted_year,
         "Studios": formatted_studios,
-        # "Next episode": next_episode,
-        # "Airing at": airing_at,
         "Genres": formatted_genres,
-        "Watched seasons": season_value,
+        # "Watched Seasons": season_value,
         "Icon": icon_emoji
     }
-
