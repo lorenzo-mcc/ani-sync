@@ -1,5 +1,4 @@
-
-# **Synched Anime Tracker**
+# **Ani-Sync**
 
 An efficient Python tool for managing and synchronizing anime lists between a local text file and a Notion database. This project leverages the **AniList API** for fetching detailed anime information and the **Notion API** for database integration.
 
@@ -27,7 +26,7 @@ An efficient Python tool for managing and synchronizing anime lists between a lo
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/synched_anime_tracker.git
+git clone https://github.com/lorenzo-mcc/ani-sync.git
 cd synched_anime_tracker
 ```
 
@@ -75,7 +74,7 @@ python main.py
 ## **File Structure**
 
 ```
-synched_anime_tracker/
+ani-sync/
 ├── config/
 │   └── settings.json           # Configuration file (optional).
 ├── script/
