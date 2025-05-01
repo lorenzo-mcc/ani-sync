@@ -6,7 +6,7 @@
 
 <div align="center">
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white"/>
-  <img alt="License" src="https://img.shields.io/github/license/lorenzo-mcc/ani-sync"/>
+  <img alt="License" src="https://img.shields.io/github/license/lorenzo-mcc/ani-sync?cacheSeconds=0"/>
   <img alt="Typer" src="https://img.shields.io/badge/CLI%20Powered%20by-Typer-4a9683?logo=typer&logoColor=white"/>
   <img alt="Notion API" src="https://img.shields.io/badge/Notion%20API-Integrated-white?logo=notion"/>
   <img alt="AniList API" src="https://img.shields.io/badge/AniList%20API-Connected-02a9ff?logo=anilist"/>
