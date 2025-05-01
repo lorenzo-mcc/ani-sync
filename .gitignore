@@ -1,0 +1,40 @@
+# Python virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environment variables
+.env
+
+# Auto-generated folders (handled by the script)
+ani-sync/output/
+tools/input/
+tools/output/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# macOS / Windows system files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Test coverage and cache
+htmlcov/
+*.cover
+coverage.xml
+.cache/
+.pytest_cache/
+
+# MyPy cache
+.mypy_cache/
