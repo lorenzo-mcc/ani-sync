@@ -224,7 +224,7 @@ OUTPUT_FILE=anime_titles.txt
 OUTPUT_FOLDER=output
 ```
 
-> ⚠️ **Note:** Make sure you replace placeholder values in the Required environment variables section with your real API keys, access tokens or database ids. Never commit your `.env` file to a public repository!
+> ⚠️ **Note:** Make sure you replace placeholder values in the Required environment variables section with your real API keys, access tokens or database ids.
 
 
 ---
