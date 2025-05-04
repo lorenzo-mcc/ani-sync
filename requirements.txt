@@ -1,3 +1,4 @@
+langdetect==1.0.9
 notion_client==2.3.0
 openai==1.75.0
 python-dotenv==1.1.0

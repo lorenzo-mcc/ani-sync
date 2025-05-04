@@ -1,4 +1,5 @@
 import re
+import langdetect
 
 
 def parse_season_from_name(anime_name: str) -> int | None:
@@ -15,6 +16,19 @@ def parse_season_from_name(anime_name: str) -> int | None:
         except ValueError:
             return None
     return None
+
+
+def is_english_ascii(s, min_length=3):
+    if not s.isascii():
+        return False
+    if len(s.strip()) < min_length:
+        return False
+    try:
+        lang = langdetect.detect(s)
+        return lang == "en"
+    except langdetect.lang_detect_exception.LangDetectException:
+        # Happens if string is too short or undetectable
+        return False
 
 
 def format_data_for_notion(anime_info: dict, full_title: str = "") -> dict:
@@ -57,9 +71,9 @@ def format_data_for_notion(anime_info: dict, full_title: str = "") -> dict:
     synonyms = anime_info.get("synonyms", [])
 
     # Prefer English, then check synonyms for ASCII-only string, then Romaji, then fallback
-    synonym_fallback = next((s for s in synonyms if s.isascii()), None)
+    synonym_fallback = next((s for s in synonyms if is_english_ascii(s)), None)
 
-    english_title = english or synonym_fallback or romaji or full_title or "Unknown"
+    english_title = (english or synonym_fallback or romaji or full_title or "Unknown").strip()
 
     raw_format = anime_info.get("format", "N/A")
     format_map = {
