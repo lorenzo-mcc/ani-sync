@@ -168,13 +168,14 @@ pip install -r requirements.txt
 
 Contents of `requirements.txt`:
 ```text
+langdetect==1.0.9
 notion_client==2.3.0
-openai==1.75.0
+openai==1.77.0
 python-dotenv==1.1.0
 Requests==2.32.3
 rich==14.0.0
 tqdm==4.67.1
-typer==0.15.2
+typer==0.15.3
 ```
 
 ### 🔢 Setup Environment Variables
@@ -235,8 +236,10 @@ OUTPUT_FOLDER=output
 ani-sync/
 ├── assets/                               # Project assets (media used in README)
 │   ├── banner.png
+│   ├── kubitto-banner.svg
+│   ├── kubitto-gradient.svg
 │   ├── kubitto-logo.png
-│   ├── demo.gif
+│   ├── demo.gif                          # (Work in progress)
 │
 ├── syncer/                               # Main syncing logic (Notion + AniList)
 │   ├── input/                            # Input files for sync (e.g., anime list)
@@ -407,8 +410,5 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 <div align="center">
-  <sub>Made with ❤️ by 
-    <img src="assets/kubitto-logo.png" alt="Kubitto" width="20" style="vertical-align: -2px; padding-left: 4px;padding-right: 2px;"/> 
-    <strong>Kubitto</strong>
-  </sub>
+  <img src="assets/kubitto-gradient.svg" alt="Made by Kubitto" style="width: 100%; height: auto;"/>
 </div>

@@ -1,0 +1,84 @@
+
+<svg fill="none" viewBox="0 0 600 50" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        @keyframes slime-image {
+          0%, 100% { transform: translateY(0); }
+          20% { transform: translateY(1px); }
+          50% { transform: translateY(-6px); }
+          80% { transform: translateY(0px); }
+        }
+
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        .container {
+          --color-main: #1e3a8a;
+          --color-primary: #2563eb;
+          --color-secondary: #3b82f6;
+          --color-tertiary: #93c5fd;
+
+          background: linear-gradient(-45deg, var(--color-main), var(--color-primary), var(--color-secondary), var(--color-tertiary));
+          background-size: 400% 400%;
+          animation: gradient 8s ease infinite;
+
+          width: 100%;
+          height: 100%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .container h1 {
+          font-size: 18px;
+        }
+
+        .slime-text {
+          animation: slime-text 1.2s ease-in-out infinite;
+          display: inline-block;
+        }
+
+        .img-slime {
+          animation: slime-image 1.2s ease-in-out infinite;
+          display: inline-block;
+          vertical-align: -2px;
+          padding-left: 5px;
+          padding-right: 1px;
+        }
+
+        @media (prefers-color-scheme: light) {
+          .container {
+            --color-main: #60a5fa;
+            --color-primary: #3b82f6;
+            --color-secondary: #2563eb;
+            --color-tertiary: #1d4ed8;
+          }
+        }
+
+        @media (prefers-reduced-motion) {
+          .container {
+            animation: none;
+          }
+
+          .slime-text, .img-slime {
+            animation: none;
+          }
+        }
+      </style>
+
+      <div class="container">
+        <h1>
+          Made by <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAASCAYAAABB7B6eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAALiEAAC4hAQdb/P8AAAAYdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCA1LjEuN4vW9zkAAAC2ZVhJZklJKgAIAAAABQAaAQUAAQAAAEoAAAAbAQUAAQAAAFIAAAAoAQMAAQAAAAIAAAAxAQIAEAAAAFoAAABphwQAAQAAAGoAAAAAAAAAxZMEAOgDAADFkwQA6AMAAFBhaW50Lk5FVCA1LjEuNwADAACQBwAEAAAAMDIzMAGgAwABAAAAAQAAAAWgBAABAAAAlAAAAAAAAAACAAEAAgAEAAAAUjk4AAIABwAEAAAAMDEwMAAAAABfJGoFGrRKcQAAA1NJREFUOE+dlDmMW1UUhv9z71vtGduTzGohhWEZRYBQohAmCCiAoQCJhiQdPR0FNQ2igIqGraNIxSrRJRVCCKQRXsIIKYSMIkHBxJ4xHo/t57efQ+Elzxbb8JXnnPufe/977yH8DdVq1cSph58mlpccTectrdYT4WI/YiaiOxD8xCxfW+R+cWZN7c+uH0OzARFRtQP/kqXw1gnH2CjZGqa6W3azHSJmya4IBHRFKXnz3FJ+L5MAZhts32oV7FLu4+WccfGkY4Bm2jcHCfYHyXRwhIh0WPjVzdW5z0E02cFEYrvVKriSv7ZetJ6w9bRylAp+PYzQ6MaIEwYzoBXBsgg5R8M0hvUiwkT0xrll9x0aNaFRQtWa/if3Fq3L85aaCAep4PdOhN1GAD/kSXwW11FYLJmwLQUREQi/dn5t/n2MG1Sa3iVXq89sQ5GjCTEL+jGj0Y7RPopn9abQipCygAhYLJkozhsQkYgZT26W81VVFTFtTW/fX7LJUEOf20GKO39E/ypumQr3rNpwbAURoHUYI4gYRGRpTR+ICCk+8LYWbOMBIsCLhzaEEeOw+9eXmSWKGb/tBQhG9gmA8K6Vj1ea/ecUmC7GLNgfJAgSQbdziKtffoobte8QBoOs3n9CZZ60gnqFKg3vZyI6nS1iFtSv38LNnTq8XhemZeHRC89ivngC2jBGNSmYGf1OGzfq3yMKfICA1aUc8nN5PLX1AgzT3KVq0/MBcrINAIAF6HRjdPspwjDCLzs/oNNqoLy+gVMPPoLat1chAswVSrjvobOwHRc5R6O8bE00RCSiatMbAOQCQBAyjvoJmAHTJNimgtaEOBneSZIwwsCH7eSQJsnkNABgWwrlJQs684dExKdKw6sT0Vk/YOwdhJDsFDgGCwUDJ0vmVExErisBrgBA30//tzgAdHoJonhagCBfqVLX/UiA7byrp5LHRQQ46mWetshuj7x31caGCm3bfdG16drq4rSHx4EIcOzhmBGRHbLo+WdWVvoTNRGhyv7gZWG83usnFzyfVRDxP9pGBJgGwXU0CnkNy6TbpPAelnIfPkYUY3Zcj6kdeGVm2hLGGT9MTqcpVphlQQBXEVlaERsGupZJTaX0bRH5MWX5ZnMtVx9P0TF/Asrjl5Vcr82WAAAAAElFTkSuQmCC" width="20" alt="Kubitto" class="img-slime" /> Kubitto
+        </h1>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
