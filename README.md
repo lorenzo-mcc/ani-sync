@@ -16,7 +16,7 @@
 **AniSync** is a CLI framework designed to automate the creation and synchronization of a Notion anime database.  
 It uses GPT-4 Vision to extract anime titles from images (like Instagram Reels or screenshots), enriches them via the AniList API, and updates a Notion database with structured metadata.
 
-This is a personal project built by **Kubitto** for portfolio purposes — combining image recognition, data enrichment, and Notion automation into one flexible toolkit for anime fans and tech-curious curators.
+This is a personal project built for portfolio purposes, combining image recognition, data enrichment, and Notion automation into a flexible toolkit for anime fans and tech-curious curators.
 
 
 ---
