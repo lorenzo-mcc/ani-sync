@@ -323,7 +323,7 @@ Here’s the planned development roadmap for future releases:
 
 - [ ] Create an animated demo (.gif) to showcase AniSync in action directly in the README for easier onboarding.
 - [ ] Add lightweight unit tests for API calls and formatting logic using `pytest`.
-- [ ] Link the Notion template in the README (to be published on the Notion Creators shop).
+- [ ] Link the Notion template in the README.
 - [ ] Modify the syncer module to handle anime statuses directly from AniList when creating entries.
 - [ ] Create a dedicated updater module to sync anime statuses in line with other updater tools.
 - [ ] Build three separate syncers:
