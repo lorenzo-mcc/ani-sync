@@ -1,1 +1,88 @@
+# ========================================
+# Default normalization
+# ========================================
+# Auto-detect text files and normalize line endings to LF in repo
 * text=auto
+
+# ========================================
+# Source code → always LF
+# ========================================
+*.py      text eol=lf
+*.sh      text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.json    text eol=lf
+*.toml    text eol=lf
+*.ini     text eol=lf
+*.cfg     text eol=lf
+*.md      text eol=lf
+*.rst     text eol=lf
+*.txt     text eol=lf
+*.csv     text eol=lf
+*.html    text eol=lf
+*.css     text eol=lf
+*.scss    text eol=lf
+*.js      text eol=lf
+*.jsx     text eol=lf
+*.ts      text eol=lf
+*.tsx     text eol=lf
+*.vue     text eol=lf
+*.php     text eol=lf
+*.java    text eol=lf
+*.c       text eol=lf
+*.cpp     text eol=lf
+*.h       text eol=lf
+*.hpp     text eol=lf
+*.go      text eol=lf
+*.rs      text eol=lf
+Dockerfile text eol=lf
+
+# ========================================
+# Windows-only scripts → CRLF
+# ========================================
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+
+# ========================================
+# Binary assets (no EOL conversion)
+# ========================================
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.svg     binary
+*.ico     binary
+*.pdf     binary
+*.zip     binary
+*.gz      binary
+*.tar     binary
+*.7z      binary
+*.exe     binary
+*.dll     binary
+
+# ========================================
+# Fonts
+# ========================================
+*.ttf     binary
+*.otf     binary
+*.woff    binary
+*.woff2   binary
+
+# ========================================
+# Data / notebooks
+# ========================================
+*.ipynb   text eol=lf
+*.pickle  binary
+*.pkl     binary
+*.h5      binary
+*.db      binary
+*.sqlite  binary
+
+# ========================================
+# Lock files (preserve exact formatting)
+# ========================================
+Pipfile.lock        -text
+poetry.lock         -text
+package-lock.json   -text
+yarn.lock           -text
+pnpm-lock.yaml      -text
