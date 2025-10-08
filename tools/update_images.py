@@ -10,7 +10,7 @@ Notes:
     Reads configuration from `.env`.
     - Required/used env vars:
         * ANILIST_API_URL
-        * FULL_CATALOGUE_DB_ID
+        * FULL_CATALOG_DB_ID
         * NOTION_API_KEY
         * OVERWRITE_HEADER_COVER
         * OVERWRITE_PROPERTY_COVER
@@ -42,12 +42,12 @@ output_dir.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(dotenv_path=env_path)
 
-REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOGUE_DB_ID"]
+REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOG_DB_ID"]
 validate_env_vars(REQUIRED_ENV_VARS)
 
 # === Notion and AniList config ===
 NOTION_API_KEY = os.getenv("NOTION_API_KEY")
-FULL_CATALOGUE_DB_ID = os.getenv("FULL_CATALOGUE_DB_ID")
+FULL_CATALOG_DB_ID = os.getenv("FULL_CATALOG_DB_ID")
 ANILIST_API_URL = os.getenv("ANILIST_API_URL", "https://graphql.anilist.co")
 REQUEST_INTERVAL = float(os.getenv("REQUEST_INTERVAL", 60 / 28))
 
@@ -112,7 +112,7 @@ def get_notion_anime():
     start_cursor = None
 
     while True:
-        kwargs = {"database_id": FULL_CATALOGUE_DB_ID}
+        kwargs = {"database_id": FULL_CATALOG_DB_ID}
         if start_cursor:
             kwargs["start_cursor"] = start_cursor
 

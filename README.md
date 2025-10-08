@@ -140,7 +140,8 @@ cp .env.example .env
 ```env
 # Required variables
 NOTION_API_KEY=your-notion-api-key
-FULL_CATALOGUE_DB_ID=your-notion-db-id
+FULL_CATALOG_DB_ID=your-fullcatalog-db-id
+GENRES_DB_ID=your-genres-db-id
 ANILIST_API_URL=https://graphql.anilist.co
 OPENAI_API_KEY=your-openai-api-key
 

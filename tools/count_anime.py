@@ -10,7 +10,7 @@ Notes:
     Reads configuration from `.env`.
     - Required/used env vars:
         * DEBUG_OUTPUT
-        * FULL_CATALOGUE_DB_ID
+        * FULL_CATALOG_DB_ID
         * NOTION_API_KEY
         * REQUEST_INTERVAL
         * USE_CACHE
@@ -40,12 +40,12 @@ output_dir.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(dotenv_path=env_path)
 
-REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOGUE_DB_ID"]
+REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOG_DB_ID"]
 validate_env_vars(REQUIRED_ENV_VARS)
 
 NOTION_API_KEY = os.getenv("NOTION_API_KEY")
 notion = Client(auth=os.getenv("NOTION_API_KEY"))
-FULL_CATALOGUE_DB_ID = os.getenv("FULL_CATALOGUE_DB_ID")
+FULL_CATALOG_DB_ID = os.getenv("FULL_CATALOG_DB_ID")
 
 VERBOSE = os.getenv("VERBOSE", "True")
 DEBUG_OUTPUT = os.getenv("DEBUG_OUTPUT", "True")
@@ -89,7 +89,7 @@ def get_notion_anime() -> list[dict]:
     anime_list = []
 
     try:
-        results = notion.databases.query(database_id=FULL_CATALOGUE_DB_ID)
+        results = notion.databases.query(database_id=FULL_CATALOG_DB_ID)
         while True:
             for page in results.get("results", []):
                 props = page["properties"]
@@ -113,7 +113,7 @@ def get_notion_anime() -> list[dict]:
                 break
 
             results = notion.databases.query(
-                database_id=FULL_CATALOGUE_DB_ID,
+                database_id=FULL_CATALOG_DB_ID,
                 start_cursor=results.get("next_cursor"),
             )
 

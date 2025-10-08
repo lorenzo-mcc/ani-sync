@@ -9,7 +9,7 @@ Usage:
 Notes:
     Reads configuration from `.env`.
     - Required/used env vars:
-        * FULL_CATALOGUE_DB_ID
+        * FULL_CATALOG_DB_ID
         * GENRES_SOURCE
         * GENRES_TARGET
         * NOTION_API_KEY
@@ -38,13 +38,13 @@ output_dir.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(dotenv_path=env_path)
 
-REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOGUE_DB_ID"]
+REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOG_DB_ID"]
 validate_env_vars(REQUIRED_ENV_VARS)
 
 notion = Client(auth=os.getenv("NOTION_API_KEY"))
 
-# Full Catalogue database ID
-FULL_CATALOGUE_DB_ID = os.getenv("FULL_CATALOGUE_DB_ID")
+# Full Catalog database ID
+FULL_CATALOG_DB_ID = os.getenv("FULL_CATALOG_DB_ID")
 
 # Property names (with defaults for flexibility)
 WATCHED_RELATION = os.getenv("WATCHED_RELATION", "Anime Watched")
@@ -59,7 +59,7 @@ def get_watched_anime():
 
     while True:
         response = notion.databases.query(
-            database_id=FULL_CATALOGUE_DB_ID,
+            database_id=FULL_CATALOG_DB_ID,
             filter={"property": WATCHED_RELATION, "relation": {"is_not_empty": True}},
             start_cursor=start_cursor,
             page_size=100,

@@ -10,6 +10,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial project creation: set up CLI structure, core sync commands, and modular tools.
 - Integrated GPT-4 Vision for anime title extraction.
 - Added AniList and Notion API connectors.
+Here you go—English version ready to paste:
+
+## [2025-10-08]
+
+### Added
+
+* Documented the `.env` variable `GENRES_DB_ID=your-genres-db-id` in the **.env example** section of the **README**.
+
+### Changed
+
+* **Breaking**: renamed `.env` variable `FULL_CATALOGUE_DB_ID` to `FULL_CATALOG_DB_ID` across **all** scripts, in `.env.example`, and in the **README**.
+
+### Migration
+
+Update your local/CI environments:
+
+* Open your `.env` and replace:
+
+  * `FULL_CATALOGUE_DB_ID=...` ➜ `FULL_CATALOG_DB_ID=...`
+* Check any references in pipelines/CI (e.g., secrets/vars using the old name).
+
+Quick example (bash):
+
+```bash
+# Backup and in-place replacement
+cp .env .env.bak
+sed -i 's/FULL_CATALOGUE_DB_ID/FULL_CATALOG_DB_ID/g' .env
+```
+
+> Note: this is a **breaking** change if your setup depends on the old variable name. Be sure to update external tools, container envs, and CI/CD provider secrets as well.
 
 ## [2025-09-21]
 

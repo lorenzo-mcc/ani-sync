@@ -9,7 +9,7 @@ Usage:
 Notes:
     Reads configuration from `.env`.
     - Required/used env vars:
-        * FULL_CATALOGUE_DB_ID
+        * FULL_CATALOG_DB_ID
         * NOTION_API_KEY
     - Can optionally restrict scope via `utils/title_filter.py` using the `--titles` CLI argument or the `ANIME_TITLES_FILE` variable in `.env`.
 """
@@ -30,11 +30,11 @@ base_path = Path(__file__).resolve().parent
 env_path = base_path.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
-REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOGUE_DB_ID"]
+REQUIRED_ENV_VARS = ["NOTION_API_KEY", "FULL_CATALOG_DB_ID"]
 validate_env_vars(REQUIRED_ENV_VARS)
 
 NOTION_API_KEY = os.getenv("NOTION_API_KEY")
-FULL_CATALOGUE_DB_ID = os.getenv("FULL_CATALOGUE_DB_ID")
+FULL_CATALOG_DB_ID = os.getenv("FULL_CATALOG_DB_ID")
 
 notion = Client(auth=NOTION_API_KEY)
 
@@ -57,7 +57,7 @@ def get_all_anime():
     start_cursor = None
 
     while True:
-        kwargs = {"database_id": FULL_CATALOGUE_DB_ID}
+        kwargs = {"database_id": FULL_CATALOG_DB_ID}
         if start_cursor:
             kwargs["start_cursor"] = start_cursor
 

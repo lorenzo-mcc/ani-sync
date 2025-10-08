@@ -9,7 +9,7 @@ Usage:
 Notes:
     Reads configuration from `.env`.
     - Required/used env vars:
-        * FULL_CATALOGUE_DB_ID
+        * FULL_CATALOG_DB_ID
         * GENRES_DB_ID
 """
 
@@ -31,10 +31,10 @@ base_path = Path(__file__).resolve().parent
 env_path = base_path.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
-REQUIRED_ENV_VARS = ["FULL_CATALOGUE_DB_ID", "GENRES_DB_ID"]
+REQUIRED_ENV_VARS = ["FULL_CATALOG_DB_ID", "GENRES_DB_ID"]
 validate_env_vars(REQUIRED_ENV_VARS)
 
-FULL_CATALOGUE_DB_ID = os.getenv("FULL_CATALOGUE_DB_ID")
+FULL_CATALOG_DB_ID = os.getenv("FULL_CATALOG_DB_ID")
 GENRES_DB_ID = os.getenv("GENRES_DB_ID")
 
 
@@ -49,7 +49,7 @@ def split_title_and_season(title: str):
 def main(force=False):
     console.print("[bold white]\n📚 AniList → Notion | Anime Importer[/bold white]\n")
 
-    database_id = FULL_CATALOGUE_DB_ID
+    database_id = FULL_CATALOG_DB_ID
     genre_database_id = GENRES_DB_ID
 
     input_file = Path(__file__).resolve().parent / "input" / "anime_list.txt"
